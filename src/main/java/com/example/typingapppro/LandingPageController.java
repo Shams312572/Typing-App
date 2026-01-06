@@ -21,6 +21,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
     /**
@@ -33,11 +35,9 @@ import javafx.stage.Stage;
         /**
          * Initializes the controller class.
          */
-        @FXML
-        private AnchorPane LPbackground;
+        @FXML private StackPane LPbackground;
 
-        @FXML
-        private AnchorPane subpane;
+        @FXML private HBox subpane;
 
         @FXML
         private JFXButton learnTypingButton;
@@ -51,9 +51,9 @@ import javafx.stage.Stage;
                 Stage theStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
                 Parent root = FXMLLoader.load(getClass().getResource("Tutorial.fxml"));
                 Scene scene = new Scene(root);
-                theStage.setFullScreen(true);
                 theStage.setScene(scene);
                 theStage.sizeToScene();
+                theStage.setFullScreen(true);
                 theStage.show();
             }catch(IOException ex){
                 ex.printStackTrace();
@@ -69,6 +69,7 @@ import javafx.stage.Stage;
                 Scene scene = new Scene(root);
                 Stage theStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
                 theStage.setScene(scene);
+                theStage.setFullScreen(true);
                 theStage.show();
 
                 QuickTestController controller = loader.getController();

@@ -104,6 +104,7 @@ import javafx.util.Duration;
                 Parent root = FXMLLoader.load(getClass().getResource("LandingPage.fxml"));
                 Scene scene = new Scene(root);
                 theStage.setScene(scene);
+                theStage.setFullScreen(true);
                 theStage.show();
             }catch(IOException ex){
                 ex.printStackTrace();
@@ -125,6 +126,7 @@ import javafx.util.Duration;
 
                 Stage theStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
                 theStage.setScene(scene);
+                theStage.setFullScreen(true);
                 theStage.show();
             }catch(Exception ex){
                 ex.printStackTrace();
@@ -140,6 +142,7 @@ import javafx.util.Duration;
                 Scene scene = new Scene(root);
                 Stage theStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
                 theStage.setScene(scene);
+                theStage.setFullScreen(true);
                 theStage.show();
 
                 QuickTestController controller = loader.getController();

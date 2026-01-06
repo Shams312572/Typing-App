@@ -322,6 +322,7 @@ import static javafx.util.Duration.millis;
                 Parent root = FXMLLoader.load(getClass().getResource("LandingPage.fxml"));
                 Scene scene = new Scene(root);
                 theStage.setScene(scene);
+                theStage.setFullScreen(true);
                 theStage.show();
             }catch(IOException ex){
                 ex.printStackTrace();
@@ -646,6 +647,7 @@ import static javafx.util.Duration.millis;
 
                 Stage theStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
                 theStage.setScene(scene);
+                theStage.setFullScreen(true);
                 theStage.show();
             }catch(Exception ex){
                 ex.printStackTrace();

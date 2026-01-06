@@ -72,9 +72,9 @@ import javafx.stage.Stage;
                 Stage theStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
                 Parent root = FXMLLoader.load(getClass().getResource("LandingPage.fxml"));
                 Scene scene = new Scene(root);
-                theStage.setFullScreen(true);
                 theStage.setScene(scene);
-                theStage.sizeToScene();
+               // theStage.sizeToScene();
+                theStage.setFullScreen(true);
                 theStage.show();
             }catch(IOException ex){
                 ex.printStackTrace();
@@ -89,9 +89,10 @@ import javafx.stage.Stage;
                 Parent root = loader.load();
                 Scene scene = new Scene(root);
                 Stage theStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-               theStage.setFullScreen(true);
                 theStage.setScene(scene);
+                theStage.setFullScreen(true);
                 theStage.show();
+
 
                 TutorialController controller = loader.getController();
                 controller.initializeLessonChoiceAndBegin( ++currentLessonChoice );
@@ -109,6 +110,7 @@ import javafx.stage.Stage;
                 Scene scene = new Scene(root);
                 Stage theStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
                 theStage.setScene(scene);
+                theStage.setFullScreen(true);
                 theStage.show();
 
                 TutorialController controller = loader.getController();

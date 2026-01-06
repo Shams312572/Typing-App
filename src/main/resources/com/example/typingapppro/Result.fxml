@@ -50,7 +50,7 @@
                 </Label>
                 <ImageView fitHeight="165.0" fitWidth="370.0" layoutX="407.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="../../../KeyboardVector.png" />
+                        <Image url="/KeyboardVector.png" />
                     </image>
                 </ImageView>
                 <ImageView fitHeight="89.0" fitWidth="117.0" layoutX="657.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">

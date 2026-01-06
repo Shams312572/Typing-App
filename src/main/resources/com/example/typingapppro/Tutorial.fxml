@@ -3,197 +3,162 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="900.0" styleClass="background" stylesheets="@tutorial.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.typingapppro.TutorialController">
+<BorderPane prefHeight="750.0" prefWidth="950.0" styleClass="background" stylesheets="@tutorial.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.typingapppro.TutorialController">
     <top>
-        <VBox prefHeight="100.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+        <VBox alignment="CENTER" BorderPane.alignment="CENTER">
             <children>
-                <AnchorPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="48.0" prefWidth="900">
+                <StackPane prefHeight="53.0" prefWidth="950.0">
                     <children>
-                        <HBox alignment="CENTER" layoutX="336.0" layoutY="14.0">
+                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="950.0" spacing="10.0">
                             <children>
                                 <ImageView fitHeight="48.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="/appLogo.png" />
                                     </image>
-                                    <cursor>
-                                        <Cursor fx:constant="DEFAULT" />
-                                    </cursor>
                                 </ImageView>
-                                <Label prefHeight="54.0" prefWidth="205.0" text=" TypeFaster" textFill="WHITE">
-                                    <font>
-                                        <Font size="35.0" />
-                                    </font>
-                                    <cursor>
-                                        <Cursor fx:constant="DEFAULT" />
-                                    </cursor>
+                                <Label text="TypeFaster" textFill="WHITE">
+                                    <font><Font size="35.0" /></font>
                                 </Label>
                             </children>
                         </HBox>
                     </children>
-                </AnchorPane>
-                <HBox prefHeight="60.0" prefWidth="900.0" style="-fx-background-color: WHITE;">
+                </StackPane>
+
+                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="950.0" style="-fx-background-color: WHITE;">
                     <children>
-                        <Label minWidth="-Infinity" prefHeight="30.0" prefWidth="77.0" text="Lesson">
-                            <padding>
-                                <Insets left="20.0" />
-                            </padding>
-                            <HBox.margin>
-                                <Insets top="25.0" />
-                            </HBox.margin>
-                        </Label>
-                        <ChoiceBox fx:id="lessonChoiceBox" minWidth="-Infinity" prefHeight="32.0" prefWidth="242.0" styleClass="lessonChoiceBox">
-                            <padding>
-                                <Insets top="5.0" />
-                            </padding>
-                            <HBox.margin>
-                                <Insets top="25.0" />
-                            </HBox.margin>
-                        </ChoiceBox>
-                        <JFXButton fx:id="goButton" minWidth="-Infinity" onAction="#onPressGo" prefHeight="46.0" prefWidth="56.0" styleClass="yellowKeys" text="Go">
-                            <HBox.margin>
-                                <Insets left="10.0" top="15.0" />
-                            </HBox.margin>
+                        <Label text="Lesson"><HBox.margin><Insets left="20.0" right="10.0" /></HBox.margin></Label>
+                        <ChoiceBox fx:id="lessonChoiceBox" prefWidth="200.0" styleClass="lessonChoiceBox" />
+                        <JFXButton fx:id="goButton" onAction="#onPressGo" prefHeight="40.0" prefWidth="56.0" styleClass="yellowKeys" text="Go">
+                            <HBox.margin><Insets left="10.0" /></HBox.margin>
                         </JFXButton>
-                        <CheckBox fx:id="soundCheckBox" minWidth="-Infinity" mnemonicParsing="false" prefHeight="31.0" prefWidth="195.0" text="Play Sounds">
-                            <padding>
-                                <Insets left="20.0" />
-                            </padding>
-                            <HBox.margin>
-                                <Insets top="25.0" />
-                            </HBox.margin>
+                        <CheckBox fx:id="soundCheckBox" text="Play Sounds">
+                            <HBox.margin><Insets left="20.0" /></HBox.margin>
                         </CheckBox>
-                        <JFXButton fx:id="timerButton" mnemonicParsing="false" opacity="0.0" prefHeight="94.0" prefWidth="800.0" text="timerButton" />
-                        <VBox prefHeight="86.0" prefWidth="144.0">
-                            <children>
-                                <Label alignment="CENTER" minWidth="-Infinity" prefHeight="86.0" prefWidth="140.0" text="Elapsed Time">
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font>
-                                </Label>
-                            </children>
-                        </VBox>
-                        <VBox prefHeight="86.0" prefWidth="151.0">
-                            <children>
-                                <Label fx:id="ETLabel" minWidth="-Infinity" prefHeight="94.0" prefWidth="154.0" text="59:59">
-                                    <font>
-                                        <Font size="48.0" />
-                                    </font>
-                                </Label>
-                            </children>
-                        </VBox>
+
+                        <HBox HBox.hgrow="ALWAYS" />
+
+                        <Label text="Elapsed Time">
+                            <font><Font size="18.0" /></font>
+                            <HBox.margin><Insets right="10.0" /></HBox.margin>
+                        </Label>
+                        <Label fx:id="ETLabel" text="00:00">
+                            <font><Font size="48.0" /></font>
+                            <HBox.margin><Insets right="20.0" /></HBox.margin>
+                        </Label>
                     </children>
                 </HBox>
             </children>
         </VBox>
     </top>
+
     <center>
-        <VBox alignment="TOP_CENTER" prefHeight="580.0" prefWidth="899.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+        <VBox alignment="TOP_CENTER" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
             <children>
-                <Separator prefHeight="16.0" prefWidth="900.0" />
-                <Label fx:id="displayArea" prefHeight="90.0" prefWidth="900.0" style="-fx-background-color: #eee;" text=" " wrapText="true">
-                    <font>
-                        <Font size="30.0" />
-                    </font>
+                <Separator prefWidth="900.0" />
+                <Label fx:id="displayArea" alignment="CENTER" maxWidth="Infinity" prefHeight="65.0" prefWidth="950.0" style="-fx-background-color: #eee;" text=" " wrapText="true">
+                    <font><Font size="30.0" /></font>
                 </Label>
-                <JFXTextArea fx:id="textInputArea" focusColor="#ffffff00" prefHeight="60.0" prefWidth="900.0" unFocusColor="YELLOW">
-                    <font>
-                        <Font size="30.0" />
-                    </font>
-                    <padding>
-                        <Insets top="10.0" />
-                    </padding></JFXTextArea>
-                <FlowPane alignment="CENTER" columnHalignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="900.0">
-                    <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                    </padding>
+                <JFXTextArea fx:id="textInputArea" focusColor="TRANSPARENT" maxHeight="-Infinity" maxWidth="900.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="62.0" prefWidth="900.0" unFocusColor="YELLOW">
+                    <font><Font size="30.0" /></font>
+                </JFXTextArea>
+
+                <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="4.0" maxWidth="920.0" prefHeight="301.0" prefWidth="920.0" vgap="4.0">
+                    <padding><Insets top="20.0" /></padding>
                     <children>
-                        <JFXButton fx:id="keybefore1" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" ellipsisString="" lineSpacing="5.0" prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text="~&#10;`" textAlignment="JUSTIFY" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" wrapText="true" />
-                        <JFXButton fx:id="key1" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text="!&#10;1" textFill="WHITE" />
-                        <JFXButton fx:id="key2" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text="\@&#10;2" textFill="WHITE" />
-                        <JFXButton fx:id="key3" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text="#&#10;3" textFill="WHITE" />
-                        <JFXButton fx:id="key4" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text="\$&#10;4" textFill="WHITE" />
-                        <JFXButton fx:id="key5" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text="\%&#10;5" textFill="WHITE" />
-                        <JFXButton fx:id="key6" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text="^&#10;6" textFill="WHITE" />
-                        <JFXButton fx:id="key7" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text="&amp;&#10;7" textFill="WHITE" />
-                        <JFXButton fx:id="key8" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text="*&#10;8" textFill="WHITE" />
-                        <JFXButton fx:id="key9" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text="(&#10;9" textFill="WHITE" />
-                        <JFXButton fx:id="key0" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text=")&#10;0&#10;" textFill="WHITE" />
-                        <JFXButton fx:id="keyminus" alignment="CENTER" buttonType="RAISED" prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text="-&#10;-" textFill="WHITE" />
-                        <JFXButton fx:id="keyplus" alignment="CENTER" buttonType="RAISED" prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text="+&#10;=" textFill="WHITE" />
-                        <JFXButton fx:id="backspace" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="108.0" styleClass="backspace" text="Backspace" textFill="WHITE" />
-                        <JFXButton fx:id="tab" alignment="CENTER" buttonType="RAISED" ellipsisString=" "  lineSpacing="5.0" prefHeight="54.0" prefWidth="79.0" styleClass="keyboardButton" text="Tab" textFill="WHITE" textOverrun="WORD_ELLIPSIS" />
-                        <JFXButton fx:id="q" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="Q" textFill="WHITE" />
-                        <JFXButton fx:id="w" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="W" textFill="WHITE" />
-                        <JFXButton fx:id="e" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="E" textFill="WHITE" />
-                        <JFXButton fx:id="r" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="R" textFill="WHITE" />
-                        <JFXButton fx:id="t" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="T" textFill="WHITE" />
-                        <JFXButton fx:id="y" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="Y" textFill="WHITE" />
-                        <JFXButton fx:id="u" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="U" textFill="WHITE" />
-                        <JFXButton fx:id="i" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="I" textFill="WHITE" />
-                        <JFXButton fx:id="o" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="O" textFill="WHITE" />
-                        <JFXButton fx:id="p" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="P" textFill="WHITE" />
-                        <JFXButton fx:id="keyBoxBracketL" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="{&#10;[" textFill="WHITE" />
-                        <JFXButton fx:id="keyBoxBracketR" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="}&#10;]" textFill="WHITE" />
-                        <JFXButton fx:id="keyBackslash" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="58.0" styleClass="keyboardButton" text="|&#10;\" textFill="WHITE" />
-                        <JFXButton fx:id="capslock" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="92.0" styleClass="keyboardButton" text="Caps Lock" textFill="WHITE" />
-                        <JFXButton fx:id="a" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="59.0" styleClass="homeKeys" text="A" textFill="WHITE" />
-                        <JFXButton fx:id="s" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="59.0" styleClass="homeKeys" text="S" textFill="WHITE" />
-                        <JFXButton fx:id="d" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="59.0" styleClass="homeKeys" text="D" textFill="WHITE" />
-                        <JFXButton fx:id="f" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="59.0" styleClass="homeKeys" text="F" textFill="WHITE" />
-                        <JFXButton fx:id="g" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="59.0" styleClass="keyboardButton" text="G" textFill="WHITE" />
-                        <JFXButton fx:id="h" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="59.0" styleClass="keyboardButton" text="H" textFill="WHITE" />
-                        <JFXButton fx:id="j" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="59.0" styleClass="homeKeys" text="J" textFill="WHITE" />
-                        <JFXButton fx:id="k" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="59.0" styleClass="homeKeys" text="K" textFill="WHITE" />
-                        <JFXButton fx:id="l" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="59.0" styleClass="homeKeys" text="L" textFill="WHITE" />
-                        <JFXButton fx:id="keySemicolon" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="59.0" styleClass="homeKeys" text=":&#10;;" textFill="WHITE" />
-                        <JFXButton fx:id="keyAphostrophe" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="59.0" styleClass="keyboardButton" text="&quot;&#10;'" textFill="WHITE" />
-                        <JFXButton fx:id="enter" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="114.0" styleClass="keyboardButton" text="Enter" textFill="WHITE" />
-                        <JFXButton fx:id="shiftl" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="117.0" styleClass="greenKeys" text="Shift" textFill="WHITE" />
-                        <JFXButton fx:id="z" alignment="CENTER" buttonType="RAISED" prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="Z" textFill="WHITE" />
-                        <JFXButton alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="X" textFill="WHITE" fx:id="x" />
-                        <JFXButton fx:id="c" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="C" textFill="WHITE" />
-                        <JFXButton fx:id="v" alignment="CENTER" buttonType="RAISED" prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="V" textFill="WHITE" />
-                        <JFXButton fx:id="b" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="B" textFill="WHITE" />
-                        <JFXButton fx:id="n" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="N" textFill="WHITE" />
-                        <JFXButton fx:id="m" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="M" textFill="WHITE" />
-                        <JFXButton fx:id="keyComma" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="&lt;&#10;," textFill="WHITE" />
-                        <JFXButton fx:id="keyDot" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="&gt;&#10;." textFill="WHITE" />
-                        <JFXButton fx:id="keyForwardslash" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="?&#10;/" textFill="WHITE" />
-                        <JFXButton fx:id="shiftr" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="139.0" styleClass="greenKeys" text="Shift" textFill="WHITE" />
-                        <JFXButton fx:id="ctrll" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="80.0" styleClass="blueKeys" text="Ctrl" textFill="WHITE" />
-                        <JFXButton fx:id="altl" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="80.0" styleClass="blueKeys" text="Alt" textFill="WHITE" />
-                        <JFXButton fx:id="space" alignment="CENTER" buttonType="RAISED"  prefHeight="54.0" prefWidth="536.0" styleClass="keyboardButton" text=" " textFill="WHITE" />
-                        <JFXButton fx:id="altr" alignment="CENTER" buttonType="RAISED" prefHeight="54.0" prefWidth="80.0" styleClass="blueKeys" text="Alt" textFill="WHITE" />
-                        <JFXButton fx:id="ctrlr" alignment="CENTER" buttonType="RAISED" prefHeight="54.0" prefWidth="80.0" styleClass="blueKeys" text="Ctrl" textFill="WHITE" />
+                        <JFXButton fx:id="keybefore1" buttonType="RAISED" prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text="~&#10;`" textFill="WHITE" />
+                        <JFXButton fx:id="key1" buttonType="RAISED" prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text="!&#10;1" textFill="WHITE" />
+                        <JFXButton fx:id="key2" buttonType="RAISED" prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text="\@&#10;2" textFill="WHITE" />
+                        <JFXButton fx:id="key3" buttonType="RAISED" prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text="#&#10;3" textFill="WHITE" />
+                        <JFXButton fx:id="key4" buttonType="RAISED" prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text="\$&#10;4" textFill="WHITE" />
+                        <JFXButton fx:id="key5" buttonType="RAISED" prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text="\%&#10;5" textFill="WHITE" />
+                        <JFXButton fx:id="key6" buttonType="RAISED" prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text="^&#10;6" textFill="WHITE" />
+                        <JFXButton fx:id="key7" buttonType="RAISED" prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text="&amp;&#10;7" textFill="WHITE" />
+                        <JFXButton fx:id="key8" buttonType="RAISED" prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text="*&#10;8" textFill="WHITE" />
+                        <JFXButton fx:id="key9" buttonType="RAISED" prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text="(&#10;9" textFill="WHITE" />
+                        <JFXButton fx:id="key0" buttonType="RAISED" prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text=")&#10;0" textFill="WHITE" />
+                        <JFXButton fx:id="keyminus" buttonType="RAISED" prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text="-&#10;-" textFill="WHITE" />
+                        <JFXButton fx:id="keyplus" buttonType="RAISED" prefHeight="54.0" prefWidth="57.0" styleClass="keyboardButton" text="+&#10;=" textFill="WHITE" />
+                        <JFXButton fx:id="backspace" buttonType="RAISED" prefHeight="54.0" prefWidth="108.0" styleClass="backspace" text="Backspace" textFill="WHITE" />
+
+                        <JFXButton fx:id="tab" buttonType="RAISED" prefHeight="54.0" prefWidth="79.0" styleClass="keyboardButton" text="Tab" textFill="WHITE" />
+                        <JFXButton fx:id="q" buttonType="RAISED" prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="Q" textFill="WHITE" />
+                        <JFXButton fx:id="w" buttonType="RAISED" prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="W" textFill="WHITE" />
+                        <JFXButton fx:id="e" buttonType="RAISED" prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="E" textFill="WHITE" />
+                        <JFXButton fx:id="r" buttonType="RAISED" prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="R" textFill="WHITE" />
+                        <JFXButton fx:id="t" buttonType="RAISED" prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="T" textFill="WHITE" />
+                        <JFXButton fx:id="y" buttonType="RAISED" prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="Y" textFill="WHITE" />
+                        <JFXButton fx:id="u" buttonType="RAISED" prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="U" textFill="WHITE" />
+                        <JFXButton fx:id="i" buttonType="RAISED" prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="I" textFill="WHITE" />
+                        <JFXButton fx:id="o" buttonType="RAISED" prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="O" textFill="WHITE" />
+                        <JFXButton fx:id="p" buttonType="RAISED" prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="P" textFill="WHITE" />
+                        <JFXButton fx:id="keyBoxBracketL" buttonType="RAISED" prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="{&#10;[" textFill="WHITE" />
+                        <JFXButton fx:id="keyBoxBracketR" buttonType="RAISED" prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="}&#10;]" textFill="WHITE" />
+                        <JFXButton fx:id="keyBackslash" buttonType="RAISED" prefHeight="54.0" prefWidth="58.0" styleClass="keyboardButton" text="|&#10;\" textFill="WHITE" />
+
+                        <JFXButton fx:id="capslock" buttonType="RAISED" prefHeight="54.0" prefWidth="92.0" styleClass="keyboardButton" text="Caps Lock" textFill="WHITE" />
+                        <JFXButton fx:id="a" buttonType="RAISED" prefHeight="54.0" prefWidth="59.0" styleClass="homeKeys" text="A" textFill="WHITE" />
+                        <JFXButton fx:id="s" buttonType="RAISED" prefHeight="54.0" prefWidth="59.0" styleClass="homeKeys" text="S" textFill="WHITE" />
+                        <JFXButton fx:id="d" buttonType="RAISED" prefHeight="54.0" prefWidth="59.0" styleClass="homeKeys" text="D" textFill="WHITE" />
+                        <JFXButton fx:id="f" buttonType="RAISED" prefHeight="54.0" prefWidth="59.0" styleClass="homeKeys" text="F" textFill="WHITE" />
+                        <JFXButton fx:id="g" buttonType="RAISED" prefHeight="54.0" prefWidth="59.0" styleClass="keyboardButton" text="G" textFill="WHITE" />
+                        <JFXButton fx:id="h" buttonType="RAISED" prefHeight="54.0" prefWidth="59.0" styleClass="keyboardButton" text="H" textFill="WHITE" />
+                        <JFXButton fx:id="j" buttonType="RAISED" prefHeight="54.0" prefWidth="59.0" styleClass="homeKeys" text="J" textFill="WHITE" />
+                        <JFXButton fx:id="k" buttonType="RAISED" prefHeight="54.0" prefWidth="59.0" styleClass="homeKeys" text="K" textFill="WHITE" />
+                        <JFXButton fx:id="l" buttonType="RAISED" prefHeight="54.0" prefWidth="59.0" styleClass="homeKeys" text="L" textFill="WHITE" />
+                        <JFXButton fx:id="keySemicolon" buttonType="RAISED" prefHeight="54.0" prefWidth="59.0" styleClass="homeKeys" text=":&#10;;" textFill="WHITE" />
+                        <JFXButton fx:id="keyAphostrophe" buttonType="RAISED" prefHeight="54.0" prefWidth="59.0" styleClass="keyboardButton" text="&quot;&#10;'" textFill="WHITE" />
+                        <JFXButton fx:id="enter" buttonType="RAISED" prefHeight="54.0" prefWidth="114.0" styleClass="keyboardButton" text="Enter" textFill="WHITE" />
+
+                        <JFXButton fx:id="shiftl" buttonType="RAISED" prefHeight="54.0" prefWidth="117.0" styleClass="greenKeys" text="Shift" textFill="WHITE" />
+                        <JFXButton fx:id="z" buttonType="RAISED" prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="Z" textFill="WHITE" />
+                        <JFXButton buttonType="RAISED" prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="X" textFill="WHITE" fx:id="x" />
+                        <JFXButton fx:id="c" buttonType="RAISED" prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="C" textFill="WHITE" />
+                        <JFXButton fx:id="v" buttonType="RAISED" prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="V" textFill="WHITE" />
+                        <JFXButton fx:id="b" buttonType="RAISED" prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="B" textFill="WHITE" />
+                        <JFXButton fx:id="n" buttonType="RAISED" prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="N" textFill="WHITE" />
+                        <JFXButton fx:id="m" buttonType="RAISED" prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="M" textFill="WHITE" />
+                        <JFXButton fx:id="keyComma" buttonType="RAISED" prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="&lt;&#10;," textFill="WHITE" />
+                        <JFXButton fx:id="keyDot" buttonType="RAISED" prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="&gt;&#10;." textFill="WHITE" />
+                        <JFXButton fx:id="keyForwardslash" buttonType="RAISED" prefHeight="54.0" prefWidth="60.0" styleClass="keyboardButton" text="?&#10;/" textFill="WHITE" />
+                        <JFXButton fx:id="shiftr" buttonType="RAISED" prefHeight="54.0" prefWidth="139.0" styleClass="greenKeys" text="Shift" textFill="WHITE" />
+
+                        <JFXButton fx:id="ctrll" buttonType="RAISED" prefHeight="54.0" prefWidth="80.0" styleClass="blueKeys" text="Ctrl" textFill="WHITE" />
+                        <JFXButton fx:id="altl" buttonType="RAISED" prefHeight="54.0" prefWidth="80.0" styleClass="blueKeys" text="Alt" textFill="WHITE" />
+                        <JFXButton fx:id="space" buttonType="RAISED" prefHeight="54.0" prefWidth="500.0" styleClass="keyboardButton" text=" " textFill="WHITE" />
+                        <JFXButton fx:id="altr" buttonType="RAISED" prefHeight="54.0" prefWidth="80.0" styleClass="blueKeys" text="Alt" textFill="WHITE" />
+                        <JFXButton fx:id="ctrlr" buttonType="RAISED" prefHeight="54.0" prefWidth="80.0" styleClass="blueKeys" text="Ctrl" textFill="WHITE" />
                     </children>
-                    <VBox.margin>
-                        <Insets top="10.0" />
-                    </VBox.margin>
                 </FlowPane>
             </children>
         </VBox>
     </center>
+
     <bottom>
-        <AnchorPane prefHeight="90.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+        <StackPane prefHeight="178.0" prefWidth="950.0" BorderPane.alignment="CENTER">
             <children>
-                <JFXButton fx:id="HomeButton" alignment="CENTER"  onAction="#goHome" prefHeight="37.0" prefWidth="139.0" styleClass="HomeButton" stylesheets="@tutorial.css" text="Home" />
-                <JFXButton fx:id="goToResultBtn"  mnemonicParsing="false" onAction="#switchSceneToResultPage" opacity="0.0" prefHeight="18.0" prefWidth="0.0" text="goToResult" />
+                <JFXButton fx:id="goToResultBtn" onAction="#switchSceneToResultPage" opacity="0.0" text="Button" visible="false" />
+                <JFXButton fx:id="timerButton" opacity="0.0" text="Button" visible="false" />
+                <JFXButton fx:id="HomeButton" alignment="TOP_CENTER" buttonType="RAISED" onAction="#goHome" prefHeight="40.0" prefWidth="150.0" styleClass="HomeButton" text="Home" textFill="#7b4b4b">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets bottom="100.0" />
+               </StackPane.margin></JFXButton>
             </children>
-        </AnchorPane>
+        </StackPane>
     </bottom>
 </BorderPane>

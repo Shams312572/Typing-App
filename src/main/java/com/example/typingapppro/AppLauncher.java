@@ -17,7 +17,7 @@ import javafx.stage.WindowEvent;
      *
      * @author Anay
      */
-    public class AppLauncher extends Application {
+    public class    AppLauncher extends Application {
 
         @Override
         public void start(Stage stage) throws Exception {

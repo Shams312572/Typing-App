@@ -1,91 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import com.jfoenix.controls.JFXButton?>
-<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="900.0" styleClass="LPbackground" stylesheets="@LPcss.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.typingapppro.QuickTestController">
+
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="900.0" styleClass="LPbackground" stylesheets="@LPcss.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.typingapppro.QuickTestController">
     <top>
-        <AnchorPane prefHeight="159.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+        <VBox alignment="CENTER" prefHeight="132.0" prefWidth="900.0" BorderPane.alignment="CENTER">
             <children>
-                <HBox layoutX="336.0" layoutY="14.0">
+                <HBox alignment="CENTER" spacing="10.0">
                     <children>
                         <ImageView fitHeight="48.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="/appLogo.png" />
+                                <Image url="@/appLogo.png" />
                             </image>
                             <cursor>
                                 <Cursor fx:constant="DEFAULT" />
                             </cursor>
                         </ImageView>
-                        <Label prefHeight="54.0" prefWidth="205.0" text=" TypeFaster" textFill="WHITE">
+                        <Label text=" TypeFaster" textFill="WHITE">
                             <font>
                                 <Font size="35.0" />
                             </font>
-                            <cursor>
-                                <Cursor fx:constant="DEFAULT" />
-                            </cursor>
                         </Label>
                     </children>
                 </HBox>
-                <Label fx:id="timeLabel" alignment="CENTER" layoutX="380.0" layoutY="86.0" prefHeight="58.0" prefWidth="140.0" text="00:00" textFill="WHITE">
+                <Label fx:id="timeLabel" alignment="CENTER" text="00:00" textFill="WHITE">
                     <font>
                         <Font size="51.0" />
                     </font>
                 </Label>
             </children>
-        </AnchorPane>
+        </VBox>
     </top>
+
     <bottom>
-        <AnchorPane prefHeight="83.0" prefWidth="900.0" style="-fx-background-color: eee;" BorderPane.alignment="CENTER">
+        <StackPane prefHeight="115.0" prefWidth="900.0" style="-fx-background-color: eee;" BorderPane.alignment="CENTER">
             <children>
-                <JFXButton fx:id="abortButton" layoutX="386.0" layoutY="18.0" onAction="#goToMainPage" prefHeight="46.0" prefWidth="127.0" styleClass="backspace" stylesheets="@tutorial.css" text="Abort Test" />
-            </children></AnchorPane>
+                <JFXButton fx:id="abortButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#goToMainPage" prefHeight="46.0" prefWidth="127.0" styleClass="backspace" stylesheets="@tutorial.css" text="Abort Test">
+               <StackPane.margin>
+                  <Insets bottom="50.0" />
+               </StackPane.margin></JFXButton>
+            </children>
+        </StackPane>
     </bottom>
+
     <left>
-        <AnchorPane prefHeight="374.0" prefWidth="115.0" style="-fx-background-color: eee;" BorderPane.alignment="CENTER">
+        <VBox alignment="CENTER" prefWidth="115.0" style="-fx-background-color: eee;" BorderPane.alignment="CENTER">
             <children>
-                <JFXButton fx:id="resultButton" layoutX="32.0" layoutY="196.0" mnemonicParsing="false" onAction="#switchSceneToResult" opacity="0.0" text="GoToResult" />
-            </children></AnchorPane>
+                <JFXButton fx:id="resultButton" mnemonicParsing="false" onAction="#switchSceneToResult" opacity="0.0" text="GoToResult" />
+            </children>
+        </VBox>
     </left>
+
     <right>
-        <AnchorPane prefHeight="374.0" prefWidth="124.0" style="-fx-background-color: eee;" BorderPane.alignment="CENTER">
+        <VBox alignment="CENTER" prefWidth="124.0" style="-fx-background-color: eee;" BorderPane.alignment="CENTER">
             <children>
-                <JFXButton fx:id="timerButton" layoutX="36.0" layoutY="176.0" mnemonicParsing="false" opacity="0.04" text="timerSOS" />
-            </children></AnchorPane>
+                <JFXButton fx:id="timerButton" mnemonicParsing="false" opacity="0.0" text="timerSOS" />
+            </children>
+        </VBox>
     </right>
+
     <center>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: eee;" BorderPane.alignment="CENTER">
+        <StackPane style="-fx-background-color: eee;" BorderPane.alignment="CENTER">
             <children>
-                <VBox style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: #AAA; -fx-border-radius: 20;">
+                <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="403.0" prefWidth="660.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: #AAA; -fx-border-radius: 20;">
                     <children>
-                        <HBox prefHeight="49.0" prefWidth="659.0" styleClass="testBlockHbox">
+                        <HBox alignment="CENTER_LEFT" prefHeight="49.0" styleClass="testBlockHbox">
                             <children>
-                                <Label prefHeight="56.0" prefWidth="610.0" text=" 1:00 Typing Test">
+                                <Label text=" 1:00 Typing Test" HBox.hgrow="ALWAYS">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
+                                    <padding>
+                                        <Insets left="15.0" />
+                                    </padding>
                                 </Label>
-                                <ImageView fx:id="refreshButton" fitHeight="27.0" fitWidth="25.0" onMouseClicked="#restartTest" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../../../refresh.png" />
-                                    </image>
-                                    <HBox.margin>
-                                        <Insets left="10.0" top="10.0" />
-                                    </HBox.margin>
-                                </ImageView>
+                                <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <ImageView fx:id="refreshButton" fitHeight="27.0" fitWidth="25.0" onMouseClicked="#restartTest" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@/refresh.png" />
+                                            </image>
+                                            <HBox.margin>
+                                                <Insets right="15.0" />
+                                            </HBox.margin>
+                                        </ImageView>
+                                    </children>
+                                </HBox>
                             </children>
                         </HBox>
-                        <JFXTextArea fx:id="textDisplay" editable="false" focusColor="#405aa800" prefHeight="367.0" prefWidth="659.0" style="-fx-background-radius: 20; -fx-background-color: white;" unFocusColor="#4d4d4d00">
+                        <JFXTextArea fx:id="textDisplay" editable="false" focusColor="#405aa800" prefHeight="359.0" prefWidth="658.0" style="-fx-background-radius: 20; -fx-background-color: white;" unFocusColor="#4d4d4d00">
                             <font>
                                 <Font size="19.0" />
                             </font>
@@ -96,6 +110,6 @@
                     </children>
                 </VBox>
             </children>
-        </AnchorPane>
+        </StackPane>
     </center>
 </BorderPane>

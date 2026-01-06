@@ -53,6 +53,7 @@ import javafx.stage.Stage;
                 Parent root = FXMLLoader.load(getClass().getResource("LandingPage.fxml"));
                 Scene scene = new Scene(root);
                 theStage.setScene(scene);
+                theStage.setFullScreen(true);
                 theStage.show();
             }catch(IOException ex){
                 ex.printStackTrace();
