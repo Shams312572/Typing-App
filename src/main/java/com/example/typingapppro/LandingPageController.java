@@ -1,13 +1,5 @@
 package com.example.typingapppro;
 
-
-    /*
-     * To change this license header, choose License Headers in Project Properties.
-     * To change this template file, choose Tools | Templates
-     * and open the template in the editor.
-     */
-
-
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
@@ -18,71 +10,61 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
+
+public class LandingPageController implements Initializable {
+
+    @FXML private StackPane LPbackground;
+    @FXML private HBox subpane;
+    @FXML private JFXButton learnTypingButton;
+    @FXML private JFXButton quickTestButton;
+
     /**
-     * FXML Controller class
-     *
-     * @author Anay
+     * Upgraded: Switches to Tutorial using setRoot for smooth full-screen transition.
      */
-    public class LandingPageController implements Initializable {
+    @FXML
+    void goToLessons(ActionEvent event) {
+        try {
+            Stage theStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("Tutorial.fxml"));
 
-        /**
-         * Initializes the controller class.
-         */
-        @FXML private StackPane LPbackground;
+            // FIX: Use setRoot to prevent the full-screen "blink" or resize
+            theStage.getScene().setRoot(root);
+            theStage.setFullScreen(true);
 
-        @FXML private HBox subpane;
-
-        @FXML
-        private JFXButton learnTypingButton;
-
-        @FXML
-        private JFXButton quickTestButton;
-
-        @FXML
-        void goToLessons(ActionEvent event) {
-            try{
-                Stage theStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-                Parent root = FXMLLoader.load(getClass().getResource("Tutorial.fxml"));
-                Scene scene = new Scene(root);
-                theStage.setScene(scene);
-                theStage.sizeToScene();
-                theStage.setFullScreen(true);
-                theStage.show();
-            }catch(IOException ex){
-                ex.printStackTrace();
-            }
+        } catch(IOException ex) {
+            ex.printStackTrace();
         }
-
-        @FXML
-        void goToTest(ActionEvent event) {
-            try{
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("QuickTest.fxml"));
-                Parent root = loader.load();
-                Scene scene = new Scene(root);
-                Stage theStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-                theStage.setScene(scene);
-                theStage.setFullScreen(true);
-                theStage.show();
-
-                QuickTestController controller = loader.getController();
-                controller.loadTest();
-            }catch(IOException ex){
-                ex.printStackTrace();
-            }
-        }
-        @Override
-        public void initialize(URL url, ResourceBundle rb) {
-            // TODO
-        }
-
     }
 
+    /**
+     * Upgraded: Switches to QuickTest using setRoot for smooth full-screen transition.
+     */
+    @FXML
+    void goToTest(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("QuickTest.fxml"));
+            Parent root = loader.load();
 
+            Stage theStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
+            // FIX: Use setRoot to keep the stage in its current state
+            theStage.getScene().setRoot(root);
+            theStage.setFullScreen(true);
+
+            // Access controller after root is set
+            QuickTestController controller = loader.getController();
+            controller.loadTest();
+
+        } catch(IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // Initialization logic if needed
+    }}
